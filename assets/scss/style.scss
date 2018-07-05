@@ -1,0 +1,45 @@
+// Loader Icon Center
+@mixin flex-center {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+@mixin position-0 {
+	top: 0;
+    left: 0;
+    right: 0;
+	bottom: 0;
+}
+
+.loader-progress {
+	height: 100%;
+    z-index: 9999;
+	position: fixed;
+	@include position-0;
+	background-color: #fff;
+
+	.spinner {
+		width: 60px;
+		height: 60px;
+		margin: auto;
+		position: absolute;
+		@include position-0;
+		border-radius: 100%;
+		background: #e2b55d; 
+		animation: sk-scaleout 0.7s infinite ease-in-out;
+	}
+
+	@keyframes sk-scaleout {
+		0% { 
+			transform: scale(0);
+		}
+
+		100% {
+			transform: scale(0.7);
+			opacity: 0;
+		}
+	}
+}
